@@ -1,32 +1,13 @@
 {
-    "network": [
+    "web": [
         {
-            "port": "80",
-            "protocol": "tcp",
-            "service": "http",
-            "product": "Cloudflare http proxy",
-            "version": ""
-        },
-        {
-            "port": "443",
-            "protocol": "tcp",
-            "service": "http",
-            "product": "Cloudflare http proxy",
-            "version": ""
-        },
-        {
-            "port": "8080",
-            "protocol": "tcp",
-            "service": "http",
-            "product": "Cloudflare http proxy",
-            "version": ""
-        },
-        {
-            "port": "8443",
-            "protocol": "tcp",
-            "service": "http",
-            "product": "Cloudflare http proxy",
-            "version": ""
+            "url": "https://example.com",
+            "status_code": 200,
+            "title": "Example Domain",
+            "webserver": "cloudflare",
+            "technologies": [
+                "Cloudflare"
+            ]
         }
     ]
 }

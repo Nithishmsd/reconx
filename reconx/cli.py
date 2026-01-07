@@ -13,6 +13,7 @@ def main():
     parser.add_argument("--osint", action="store_true", help="Run OSINT recon")
     parser.add_argument("--legal", action="store_true", help="Accept legal disclaimer")
     parser.add_argument("--network", action="store_true", help="Run network recon")
+    parser.add_argument("--web", action="store_true", help="Run web reconnaissance")
 
     args = parser.parse_args()
 
