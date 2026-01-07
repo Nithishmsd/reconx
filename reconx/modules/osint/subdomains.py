@@ -1,13 +1,13 @@
 import subprocess
-from reconx.core.utils import check_tool
+from reconx.core.utils import check_tool, opsec_delay
 
 def run_subdomain_enum(target):
     print("[*] Running subdomain enumeration...")
-
     subdomains = set()
 
-    # --- subfinder ---
     check_tool("subfinder")
+    opsec_delay()
+
     try:
         result = subprocess.run(
             ["subfinder", "-silent", "-d", target],
@@ -19,8 +19,9 @@ def run_subdomain_enum(target):
     except Exception:
         pass
 
-    # --- amass (passive) ---
     check_tool("amass")
+    opsec_delay()
+
     try:
         result = subprocess.run(
             ["amass", "enum", "-passive", "-d", target],
@@ -33,3 +34,4 @@ def run_subdomain_enum(target):
         pass
 
     return sorted(subdomains)
+
