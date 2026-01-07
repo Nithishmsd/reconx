@@ -4,6 +4,9 @@ from reconx.engine import ReconEngine
 import json
 import os
 
+from reconx.engine import ReconEngine
+from reconx.reports.html_report import generate_html_report
+
 def main():
     parser = argparse.ArgumentParser(
         description="ReconX - Advanced Red Team Recon Automation Toolkit"
@@ -31,4 +34,8 @@ def main():
         json.dump(results, f, indent=4)
 
     print(f"[+] Report saved to {report_file}")
+
+    html_report = f"reports/{args.target}_report.html"
+    generate_html_report(args.target, results, html_report)
+    print(f"[+] HTML report saved to {html_report}")
 
