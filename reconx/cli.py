@@ -12,6 +12,7 @@ def main():
     parser.add_argument("target", help="Target domain or IP address")
     parser.add_argument("--osint", action="store_true", help="Run OSINT recon")
     parser.add_argument("--legal", action="store_true", help="Accept legal disclaimer")
+    parser.add_argument("--network", action="store_true", help="Run network recon")
 
     args = parser.parse_args()
 
