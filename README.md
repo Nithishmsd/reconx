@@ -59,7 +59,6 @@ python3 reconx.py example.com --osint --legal
 
 ## Output Section
 
-```md
 ## Output
 
 Reports are generated in the `reports/` directory:
@@ -72,12 +71,13 @@ Reports are generated in the `reports/` directory:
 
 
 
-Legal Disclaimer (IMPORTANT)
+Legal Disclaimer  
 
 ## Disclaimer
 
 This tool is intended for educational and authorized security testing only.
 Unauthorized scanning is illegal.
+
 
 
 
