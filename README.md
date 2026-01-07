@@ -26,7 +26,6 @@ git clone https://github.com/Nithishmsd/reconx.git
 cd reconx
 
 
-
 ## Install Dependencies
 
 sudo apt install -y nmap whois amass subfinder httpx
@@ -42,11 +41,16 @@ pip3 install -r requirements.txt
 ```md
 ## Usage
 
+
 ### Full Recon
+
 ```bash
+
 python3 reconx.py example.com --osint --network --web --legal
 
-OSINT Only
+
+
+### OSINT Only
 
 python3 reconx.py example.com --osint --legal
 
@@ -74,5 +78,6 @@ Legal Disclaimer (IMPORTANT)
 
 This tool is intended for educational and authorized security testing only.
 Unauthorized scanning is illegal.
+
 
 
