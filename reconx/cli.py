@@ -1,5 +1,8 @@
 import argparse
 import sys
+from reconx.engine import ReconEngine
+import json
+import os
 
 def main():
     parser = argparse.ArgumentParser(
@@ -8,8 +11,6 @@ def main():
 
     parser.add_argument("target", help="Target domain or IP address")
     parser.add_argument("--osint", action="store_true", help="Run OSINT recon")
-    parser.add_argument("--network", action="store_true", help="Run network recon")
-    parser.add_argument("--web", action="store_true", help="Run web recon")
     parser.add_argument("--legal", action="store_true", help="Accept legal disclaimer")
 
     args = parser.parse_args()
@@ -18,8 +19,14 @@ def main():
         print("[!] You must accept the legal disclaimer using --legal")
         sys.exit(1)
 
-    print("[+] ReconX started")
-    print(f"[+] Target : {args.target}")
-    print(f"[+] OSINT  : {args.osint}")
-    print(f"[+] Network: {args.network}")
-    print(f"[+] Web    : {args.web}")
+    engine = ReconEngine(args.target)
+    results = engine.run(args)
+
+    os.makedirs("reports", exist_ok=True)
+
+    report_file = f"reports/{args.target}_report.json"
+    with open(report_file, "w") as f:
+        json.dump(results, f, indent=4)
+
+    print(f"[+] Report saved to {report_file}")
+
